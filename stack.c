@@ -40,7 +40,6 @@ int peek(int stk[]){
 void display(int stk[]){
   int i;
   if (top == -1) {
-    /* code */
     printf("the stack is empty\n" );
   }else{
     for(i=top;i>=0;i--){
@@ -53,14 +52,19 @@ void display(int stk[]){
 
 int main(int argc, char const *argv[]) {
   int stk[10];
-  push(stk,1);
-  push(stk,2);
-  push(stk,3);
-  push(stk,4);
-  display(stk);
-  peek(stk);
-  pop(stk);
-  pop(stk);
-  display(stk);
+  printf("....the stack size is limited to 10....");
+
+  int val, option;
+  do{
+	  printf("..........the menu for stack opreation..........\n");
+	  printf("1.push \n");
+	  printf("2.pop \n");
+	  printf("3.peek \n");
+	  printf("4.diplay \n");
+	  printf("5.exit");
+	  scanf("%d", &option);
+	  /*will more line later */
+  }
+
   return 0;
 }

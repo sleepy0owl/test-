@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define max 10
+int que[max];
+int front = rear = -1;
+
+void insert(int que[], int data){
+  if(rear == max -1){
+    printf("overflow\n" );
+  }else if(front == -1 && rear == -1){
+    front = 0;
+    rear = 0;
+  }else{
+    rear++;
+  }
+  que[rear] = data;
+}
+
+int deletion(int que[]) {
+  /* code */
+  int data;
+  if(front == -1 || front > rear){
+    printf("underflow\n" );
+  }else{
+    data = que[front];
+    front++;
+    if (front > rear) {
+      /* code */
+      front = rear = -1;
+    }
+  }
+  return data;
+}
+
+void display(int que[]) {
+  /* code */
+  if(front == -1 && front > rear){
+    printf("the queue is empty\n" );
+  }else{
+    for(i=front ; i<=rear; i++){
+      printf("%d\t", que[i]);
+    }
+  }
+  printf("\n");
+}
+
+int peek(int que[]){
+  int data;
+  if(front = -1 || front > rear){
+    printf("the queue is empty" );
+  }else{
+    data = que[front];
+    printf("%d", data);
+  }
+  printf("\n",);
+  return data;
+}
+
+int main(int argc, char const *argv[]) {
+  /* code */
+  insert(que,1);
+  insert(que,2);
+  insert(que,3);
+  insert(que,4);
+  insert(que,5);
+  return 0;
+}
